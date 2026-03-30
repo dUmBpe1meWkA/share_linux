@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Введите путь к каталогу:"
+read folder
+
+cd "$folder"
+
+for item in *
+do
+    if [ -f "$item" ]
+    then
+        echo "$item -> файл"
+    else
+        if [ -d "$item" ]
+        then
+            echo "$item -> директория"
+        fi
+    fi
+done
